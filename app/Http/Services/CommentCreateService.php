@@ -40,15 +40,15 @@ class CommentCreateService
         $user = User::where(['name' => $name,'email' => $email])->first();
         if(empty($user))
         {
-            $user = User::create([
-                'name'  => $name,
-                'email' => $email,
-                'password' => bcrypt($email),
-                'url'    => $url,
-                'avatar' => $avatar,
-                'ip'  => $request->ip,
-                'fen' => 0
-            ]);
+            $user = new User();
+            $user->name = $name;
+            $user->email = $email;
+            $user->password = bcrypt($email);
+            $user->url = $url;
+            $user->avatar = $avatar;
+            $user->ip = $request->getClientIp();
+            $user->fen = 0;
+            $user->save();
             //保存用户登录状态
             \Auth::guard('web')->attempt(['name' => $name,'password' => $email],1);
         }else{
