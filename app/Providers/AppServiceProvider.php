@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Config;
 use App\Models\Nav;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +17,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        Schema::defaultStringLength(191);
         view()->composer('home.layout.header', function ($view){
             $navbars = Nav::orderBy('sort','asc')->get()->toTree();
             $view->with('navbars', $navbars);
@@ -34,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        //配置信息到前后台
-        view()->share('sys_config',Config::pluck('value','name')->toArray());
+//        //配置信息到前后台
+//        view()->share('sys_config',Config::pluck('value','name')->toArray());
     }
 }

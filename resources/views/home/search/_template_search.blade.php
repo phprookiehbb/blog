@@ -3,10 +3,10 @@
     {{ $search }} | CraspHB彬的博客
 @endsection
 @section('meta')
-    <meta name="author" content="{{ $sys_config['web_description'] }}">
+    <meta name="author" content="{{ get_config('web_description') }}">
     <meta property="og:type" content="article">
-    <meta name="description" content="{{ $sys_config['web_description'] }}">
-    <meta name="keywords" content="{{ $sys_config['web_keywords'] }},{{ $search }}">
+    <meta name="description" content="{{ get_config('web_description') }}">
+    <meta name="keywords" content="{{ get_config('web_keywords') }},{{ $search }}">
 @endsection
 @section('body')
     <body class="home blog post-template-default single single-post postid-1562 single-format-standard">

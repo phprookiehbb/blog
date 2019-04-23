@@ -41,10 +41,13 @@ Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(fun
     Route::post('system/store','SystemController@store')->name('system.store');
     Route::post('system/upload','SystemController@upload')->name('system.upload');
 
+
+
     Route::get('comment/index','CommentController@index')->name('comment.index');
     Route::get('comment/second','CommentController@second')->name('comment.second');
     Route::post('comment/delete/{comment}','CommentController@delete')->name('comment.delete');
     Route::post('comment/deleteReply/{comment}','CommentController@reply')->name('comment.reply');
+    Route::post('comment/check','CommentController@check')->name('comment.check');
 
 });
 Route::get('/article/{article}','\App\Http\Controllers\Home\ArticleController@index')->name('article');

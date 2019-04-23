@@ -1,9 +1,9 @@
 <footer id="site-footer">
      <span>
-        {{ $sys_config['web_record'] }} |
+        {{ get_config('web_record') }} |
     </span>
-    {{ $sys_config['web_copyright'] }}
-    <a href="{{ $sys_config['web_github'] }}" rel="nofollow" target="_blank" title="GitHub">
+    {{ get_config('web_copyright') }}
+    <a href="{{ get_config('web_github') }}" rel="nofollow" target="_blank" title="GitHub">
         <i aria-hidden="true" class="fa fa-github">
         </i>
     </a>

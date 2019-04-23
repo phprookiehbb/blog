@@ -1,14 +1,14 @@
 @extends('home.layout.base')
 @section('title')
-    {{ $article->title }} | {{ $sys_config['web_name'] }}
+    {{ $article->title }} | {{ get_config('web_name') }}
 @endsection
 @section('meta')
-    <meta name="author" content="{{ $sys_config['web_author'] }}">
+    <meta name="author" content="{{ get_config('web_author') }}">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="{{ $article->created_at }}">
-    <meta property="article:author" content="{{ $sys_config['web_author'] }},{{ $sys_config['web_name'] }}">
-    <meta property="article:published_first" content="{{ $sys_config['web_name'] }}">
-    <meta property="og:title" content="{{ $article->title }} | {{ $sys_config['web_name'] }}">
+    <meta property="article:author" content="{{ get_config('web_author') }},{{ get_config('web_name') }}">
+    <meta property="article:published_first" content="{{ get_config('web_name') }}">
+    <meta property="og:title" content="{{ $article->title }} | {{ get_config('web_name') }}">
     <meta name="description" content="{{ $article->description }}">
     <meta property="og:description" content="{{ $article->description }}">
     <meta name="keywords" content="{{ $article->keywords }}">
@@ -97,7 +97,7 @@
                 @if(strstr($article->type,'c') !== false)
                 注：本文转载于 <a href="{{ $article->source }}">{{ $article->source }}</a> ，如有维权，请联系博主删除
                 @else
-                {!! str_replace('{url}',route('article',['article'=>$article->id]),$sys_config['web_article_copyright']) !!}
+                {!! str_replace('{url}',route('article',['article'=>$article->id]),get_config('web_article_copyright')) !!}
                 @endif
             </p>
             <!-- 文章标签 -->

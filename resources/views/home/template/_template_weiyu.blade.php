@@ -1,11 +1,11 @@
 @extends('home.layout.base')
 @section('title')
-    吐槽 | {{ $sys_config['web_name'] }}
+    吐槽 | {{ get_config('web_name') }}
 @endsection
 @section('meta')
-    <meta name="author" content="{{ $sys_config['web_author'] }}">
-    <meta name="description" content="{{ $sys_config['web_description'] }}">
-    <meta name="keywords" content="{{ $sys_config['web_keywords'] }}">
+    <meta name="author" content="{{ get_config('web_author') }}">
+    <meta name="description" content="{{ get_config('web_description') }}">
+    <meta name="keywords" content="{{ get_config('web_keywords') }}">
 @endsection
 @section('body')
     <body class="home blog post-template-default single single-post postid-1562 single-format-standard">

@@ -1,4 +1,4 @@
-@if(isset($sys_config['web_comment']) && $sys_config['web_comment'] == 1)
+@if(get_config('web_comment') == 1)
 <!-- #post -->
 <div class="comments-area" id="comments">
     <div class="comment-respond" id="respond">

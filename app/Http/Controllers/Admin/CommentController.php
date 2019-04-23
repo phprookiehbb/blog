@@ -42,5 +42,20 @@ class CommentController extends Controller
         $reply->delete();
         return redirect()->back();
     }
+    public function check()
+    {
+        $id = request()->post('id');
+        $type = request()->post('type');
+        $status = request()->post('status');
+        if($type == 1)
+        {
+            $comment = Comment::where('id',$id)->first();
+        }else{
+            $comment = CommentReply::where('id',$id)->first();
+        }
+        $comment->status = $status;
+        $comment->save();
+        return $this->success('审核成功');
+    }
 
 }

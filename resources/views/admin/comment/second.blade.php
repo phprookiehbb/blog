@@ -51,7 +51,7 @@
                                                 <span class="label label-success">已审核</span>
                                                 @break
                                                 @default
-                                                <span class="label label-danger">未审核</span>
+                                                <span class="label label-danger comment-check"  style="cursor:pointer" data-id="{{ $comment->id }}" data-href="{{ route('comment.check') }}" data-type="2">未审核</span>
                                             @endswitch
                                         </td>
                                         <td>{{ $comment->created_at }}</td>

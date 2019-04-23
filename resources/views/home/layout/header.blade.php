@@ -10,7 +10,7 @@
     </div>
     <div class="top-navi-content">
         <a class="top-navi-logo" href="{:url('@home/index/index')}">
-            <img alt="{{ $sys_config['web_name'] }}" src="{{ $sys_config['web_logo'] }}">
+            <img alt="{{ get_config('web_name') }}" src="{{ get_config('web_logo') }}">
 
         </a>
         <a class="top-navi-search-btn" href="{{ route('tags') }}" title="搜索博客内容">

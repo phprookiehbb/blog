@@ -15,9 +15,10 @@ class CreateWeiyusTable extends Migration
     {
         Schema::create('weiyus', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('content');
-            $table->unsignedTinyInteger('status')->default(1);
-            $table->unsignedMediumInteger('zan')->default(30);
+            $table->text('content')->comment('html的内容');
+            $table->text('markdown')->comment('markdown内容');
+            $table->unsignedMediumInteger('zan')->comment('赞的量');
+            $table->unsignedTinyInteger('status')->default(1)->comment('1：展示，0：不展示');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateWeiyusTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('weiyu');
+        Schema::dropIfExists('weiyus');
     }
 }

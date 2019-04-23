@@ -1,12 +1,12 @@
 @extends('home.layout.base')
 @section('title')
-   {{ $nav->name }} |{{ $sys_config['web_name'] }}
+   {{ $nav->name }} |{{ get_config('web_name') }}
 @endsection
 @section('meta')
-    <meta name="author" content="{{ $sys_config['web_author'] }}">
+    <meta name="author" content="{{ get_config('web_author') }}">
     <meta property="og:type" content="article">
-    <meta name="description" content="{{ $sys_config['web_description'] }}">
-    <meta name="keywords" content="{{ $sys_config['web_keywords'] }}">
+    <meta name="description" content="{{ get_config('web_description') }}">
+    <meta name="keywords" content="{{ get_config('web_keywords') }}">
 @endsection
 @section('body')
     <body class="page-template page-template-template page-template-template-links page-template-templatetemplate-links-php page page-id-308">

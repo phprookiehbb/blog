@@ -50,8 +50,13 @@ class CommentCreateService
             $user->fen = 0;
             $user->save();
             //保存用户登录状态
+            \Auth::guard('web')->logout();
             \Auth::guard('web')->attempt(['name' => $name,'password' => $email],1);
         }else{
+            if($user->id != \Auth::guard('web')->id())
+            {
+                \Auth::guard('web')->logout();
+            }
             \Auth::guard('web')->attempt(['name' => $name,'password' => $email],1);
         }
         $status = 0;

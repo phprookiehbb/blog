@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTagsTable extends Migration
+class CreateLevelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tags', function (Blueprint $table) {
+        Schema::create('levels', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tag')->comment('标签名称');
-            $table->unsignedSmallInteger('times')->default(1)->comment('使用次数');
-            $table->timestamps();
+            $table->unsignedTinyInteger('level')->comment('等级');
+            $table->unsignedMediumInteger('fen')->comment('分值');
         });
     }
 
@@ -28,6 +27,6 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('levels');
     }
 }
