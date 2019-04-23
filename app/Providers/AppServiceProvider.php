@@ -17,7 +17,11 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+<<<<<<< HEAD
         Schema::defaultStringLength(191);
+=======
+     	 Schema::defaultStringLength(191);
+>>>>>>> crasp
         view()->composer('home.layout.header', function ($view){
             $navbars = Nav::orderBy('sort','asc')->get()->toTree();
             $view->with('navbars', $navbars);
