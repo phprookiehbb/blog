@@ -35,14 +35,14 @@
                                                 邮箱服务器类型：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.driver" type="text" value="{{ get_config('mail.driver') }}" placeholder="邮箱服务器类型" />
+                                                <input class="form-control" name="mail_driver" type="text" value="{{ get_config('mail_driver') }}" placeholder="邮箱服务器类型" />
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置显示的网站的标题，配置名：
                                                 <code>
-                                                    mail.driver
+                                                    mail_driver
                                                 </code>
                                             </div>
                                         </div>
@@ -51,14 +51,14 @@
                                                 加密方式：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.encryption" type="text" value="{{ get_config('mail.encryption') }}" placeholder="加密方式" />
+                                                <input class="form-control" name="mail_encryption" type="text" value="{{ get_config('mail_encryption') }}" placeholder="加密方式" />
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置加密方式，配置名：
                                                 <code>
-                                                    mail.encryption
+                                                    mail_encryption
                                                 </code>
                                             </div>
                                         </div>
@@ -67,14 +67,14 @@
                                                 邮箱服务器端口：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.port" type="text" value="{{ get_config('mail.port') }}" placeholder="邮箱服务器端口" />
+                                                <input class="form-control" name="mail_port" type="text" value="{{ get_config('mail_port') }}" placeholder="邮箱服务器端口" />
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置邮箱服务器端口，配置名：
                                                 <code>
-                                                    mail.port
+                                                    mail_port
                                                 </code>
                                             </div>
                                         </div>
@@ -84,14 +84,14 @@
                                                 邮箱服务器地址：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.host" type="text" value="{{ get_config('mail.host') }}" placeholder="邮箱服务器地址"/>
+                                                <input class="form-control" name="mail_host" type="text" value="{{ get_config('mail_host') }}" placeholder="邮箱服务器地址"/>
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置邮箱服务器地址，配置名：
                                                 <code>
-                                                    mail.host
+                                                    mail_host
                                                 </code>
                                             </div>
                                         </div>
@@ -100,14 +100,14 @@
                                                 邮箱账号：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.username" type="text" value="{{ get_config('mail.username') }}" placeholder=""/>
+                                                <input class="form-control" name="mail_username" type="text" value="{{ get_config('mail_username') }}" placeholder=""/>
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置邮箱账号，配置名：
                                                 <code>
-                                                    mail.username
+                                                    mail_username
                                                 </code>
                                             </div>
                                         </div>
@@ -116,14 +116,14 @@
                                                 邮箱密码：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.password" type="text" value="{{ get_config('mail.password') }}" placeholder=""/>
+                                                <input class="form-control" name="mail_password" type="text" value="{{ get_config('mail_password') }}" placeholder=""/>
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置邮箱密码，配置名：
                                                 <code>
-                                                    mail.password
+                                                    mail_password
                                                 </code>
                                             </div>
                                         </div>
@@ -132,14 +132,14 @@
                                                 发件人名称：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.from_name" type="text" value="{{ get_config('mail.from_name') }}" placeholder=""/>
+                                                <input class="form-control" name="mail_from_name" type="text" value="{{ get_config('mail_from_name') }}" placeholder=""/>
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置发件人名称，配置名：
                                                 <code>
-                                                    mail.from_name
+                                                    mail_from_name
                                                 </code>
                                             </div>
                                         </div>
@@ -148,14 +148,14 @@
                                                 发件人邮箱：
                                             </label>
                                             <div class="col-md-4">
-                                                <input class="form-control" name="mail.from_address" type="text" value="{{ get_config('mail.from_address') }}" placeholder=""/>
+                                                <input class="form-control" name="mail_from_address" type="text" value="{{ get_config('mail_from_address') }}" placeholder=""/>
                                             </div>
                                             <div class="col-md-5 help-block">
                                                 <i class="fa fa-info-circle color-info1">
                                                 </i>
                                                 设置发件人邮箱，配置名：
                                                 <code>
-                                                    mail.from_address
+                                                    mail_from_address
                                                 </code>
                                             </div>
                                         </div>
