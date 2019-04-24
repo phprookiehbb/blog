@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use App\Jobs\SendMail;
-use Illuminate\Database\Eloquent\Model;
 
-class CommentReply extends Model
+class CommentReply extends Models
 {
     public static function boot()
     {

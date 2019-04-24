@@ -7,8 +7,6 @@
  */
 
 namespace App\Http\Services;
-
-
 use App\Models\Nav;
 
 class NavService
@@ -35,6 +33,7 @@ class NavService
                 $parent = Nav::find($parent_id);
                 Nav::create($data, $parent);
             }else{
+                $data['parent_id'] = intval($parent_id);
                 Nav::create($data);
             }
         }else{

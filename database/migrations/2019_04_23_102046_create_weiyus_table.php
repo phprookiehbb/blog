@@ -17,7 +17,7 @@ class CreateWeiyusTable extends Migration
             $table->increments('id');
             $table->text('content')->comment('html的内容');
             $table->text('markdown')->comment('markdown内容');
-            $table->unsignedMediumInteger('zan')->comment('赞的量');
+            $table->unsignedMediumInteger('zan')->default(0)->comment('赞的量');
             $table->unsignedTinyInteger('status')->default(1)->comment('1：展示，0：不展示');
             $table->timestamps();
         });

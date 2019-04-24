@@ -14,7 +14,10 @@ class NavRequest extends Request
     {
         return [
             'name' => ['required','min:1','max:15'],
-            'url'  => ['required']
+            'url'  => [
+                'required',
+                'unique:navs,url,'.$this->route()->originalParameter('nav')
+            ]
         ];
     }
     public function messages()

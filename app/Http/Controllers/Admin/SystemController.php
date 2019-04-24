@@ -28,6 +28,7 @@ class SystemController extends Controller
         $data = $request->post();
         unset($data['file']);
         collect($data)->map(function($value, $key){
+            $value = $value ?? '';
             Config::updateOrCreate(
                 ['name' => $key],
                 ['name' => $key, 'value' => $value]

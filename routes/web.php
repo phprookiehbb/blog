@@ -19,8 +19,8 @@ Route::get('logout','\App\Http\Controllers\Admin\LoginController@logout')->name(
 Route::post('login','\App\Http\Controllers\Admin\LoginController@login')->name('login.login');
 Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(function (){
 
-   Route::get('index','IndexController@index')->name('admin.index');
-   Route::post('upload','ArticleController@upload')->name('article.upload');
+    Route::get('/','IndexController@index');
+    Route::post('upload','ArticleController@upload')->name('article.upload');
 
     // 导航的资源路由
     Route::resource('nav', 'NavController', ['only' => [

@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Weiyu extends Model
+class Weiyu extends Models
 {
     //
-    protected $guarded = [];
 
 }

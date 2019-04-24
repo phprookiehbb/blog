@@ -43,7 +43,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">所属分类</label>
                             <select name="parent_id" class="form-control col-sm-8" >
-                                <option value="">--请选择--</option>
+                                <option value="0">--请选择--</option>
                                 @foreach($navs as $nav)
                                 <option value="{{ $nav->id }}">{{ $nav->name }}</option>
                                 @endforeach
@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">url</label>
-                            <input class="form-control" name="url" value="" type="text">
+                            <input class="form-control" name="url" value="" type="text"  required>
                             <p class="help-block">
                                 <i class="fa fa-info-circle color-info1">
                                 </i>
@@ -70,7 +70,7 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">自定义模板</label>
                             <select name="template" class="form-control col-sm-8" required >
-                                <option value="0">--请选择--</option>
+                                <option value="">--请选择--</option>
                                 @foreach($templates as $template)
                                 <option value="{{ $template }}">{{ $template }}</option>
                                 @endforeach

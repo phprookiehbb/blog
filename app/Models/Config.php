@@ -2,10 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Config extends Model
+class Config extends Models
 {
-    //
-    protected $guarded = [];
+
 }

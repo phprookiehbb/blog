@@ -19,7 +19,7 @@ class NavChangeService
         {
             if($nav->template == '_template_achive')
             {
-                $route.= "Route::get('".$nav->url."','\App\Http\Controllers\Home\IndexController@index')->name('nav.".$nav->url."');\r\n";
+                $route.= "Route::get('".$nav->url."','\App\Http\Controllers\Home\ArchiveController@index')->name('nav.".$nav->url."');\r\n";
             }elseif($nav->template == '_template_category'){
                 $route.= "Route::get('category/".$nav->url."','\App\Http\Controllers\Home\CategoryController@index')->name('nav.".$nav->url."');\r\n";
             }elseif($nav->template == '_template_weiyu'){

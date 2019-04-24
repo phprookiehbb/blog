@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 
-class Nav extends Model
+class Nav extends Models
 {
     use NodeTrait;
     const MSG = ['已关闭','已开启'];
     //
-    protected $fillable = [
-        'name','url','markdown','content','editormd_id-html-code','sort','parent_id','status','template','is_comment'
-    ];
+    protected $guarded = [];
 
     public function articles()
     {

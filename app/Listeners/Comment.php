@@ -27,7 +27,6 @@ class Comment
      */
     public function handle(CommentCreated $event)
     {
-        $event->comment->user()->increment('fen',5);
         $event->comment->user()->increment('comments');
         //以及评论
         if($event->comment instanceof \App\Models\Comment)

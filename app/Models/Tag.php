@@ -2,11 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Tag extends Models
 {
-    protected $fillable = ['tag','times'];
     //
     public function articles()
     {

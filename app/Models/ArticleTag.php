@@ -2,10 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class ArticleTag extends Model
+class ArticleTag extends Models
 {
     //
-    protected $guarded = [];
+
 }

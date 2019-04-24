@@ -44,7 +44,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">所属分类</label>
                                 <select name="parent_id" class="form-control col-sm-8" >
-                                    <option value="">--请选择--</option>
+                                    <option value="0">--请选择--</option>
                                     @foreach($navs as $na)
                                         <option value="{{ $na->id }}"
                                                 @if($nav->parent_id == $na->id)

@@ -28,8 +28,8 @@ class AdminController extends Controller
         $admin->name = $request->post('name');
         $admin->email = $request->post('email');
         $admin->password = bcrypt($request->post('password'));
-        $admin->avatar = $request->post('avatar');
-        $admin->info = $request->post('info');
+        $admin->avatar = $request->post('avatar') ?? '';
+        $admin->info = $request->post('info') ?? '';
         $admin->save();
         return $this->success('添加成功',route('admin.index'));
     }
@@ -44,8 +44,8 @@ class AdminController extends Controller
         if($request->post('password')) {
             $admin->password = bcrypt($request->post('password'));
         }
-        $admin->avatar = $request->post('avatar');
-        $admin->info = $request->post('info');
+        $admin->avatar = $request->post('avatar') ?? '';
+        $admin->info = $request->post('info') ?? '';
         $admin->save();
         return $this->success('修改成功',route('admin.index'));
     }

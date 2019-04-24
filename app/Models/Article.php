@@ -3,9 +3,8 @@
 namespace App\Models;
 
 use App\Http\Requests\ArticleRequest;
-use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Article extends Models
 {
     protected $guarded = [];
 
@@ -65,14 +64,14 @@ class Article extends Model
     {
         $this->title = $request->input('title');
         $this->category_id = $request->input('category_id');
-        $this->keywords = $request->input('keywords');
-        $this->description = $request->input('description');
+        $this->keywords = $request->input('keywords') ?? '' ;
+        $this->description = $request->input('description') ?? '' ;
         $this->content = $request->input('editormd_id-html-code');
         $this->markdown = $request->input('markdown');
-        $this->source = $request->input('source');
-        $this->click = $request->input('click');
-        $this->author = $request->input('author');
-        $this->img = $this->getImg($request->input('img'), $request->input('markdown'));
+        $this->source = $request->input('source') ?? '' ;
+        $this->click = $request->input('click') ?? 0 ;
+        $this->author = $request->input('author') ?? '' ;
+        $this->img = $this->getImg($request->input('img'), $request->input('markdown')) ?? '';
         $this->type = !empty($request->input('type')) ? join(',',$request->input('type','')) : '';
         $this->save();
         return $this;
