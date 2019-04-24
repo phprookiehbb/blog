@@ -16,6 +16,11 @@
                                 系统
                             </a>
                         </li>
+                        <li>
+                            <a href="{{ route('system.email') }}">
+                                邮件
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

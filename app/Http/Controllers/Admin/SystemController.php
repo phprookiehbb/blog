@@ -23,11 +23,15 @@ class SystemController extends Controller
     {
         return view('admin.system.sys');
     }
+    public function email()
+    {
+        return view('admin.system.email');
+    }
     public function store(Request $request)
     {
         $data = $request->post();
-        unset($data['file']);
         collect($data)->map(function($value, $key){
+            if($key == 'file') return ;
             $value = $value ?? '';
             Config::updateOrCreate(
                 ['name' => $key],

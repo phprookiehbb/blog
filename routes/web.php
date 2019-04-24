@@ -19,7 +19,7 @@ Route::get('logout','\App\Http\Controllers\Admin\LoginController@logout')->name(
 Route::post('login','\App\Http\Controllers\Admin\LoginController@login')->name('login.login');
 Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(function (){
 
-    Route::get('/','IndexController@index');
+    Route::get('/index','IndexController@index')->name('admin.index');
     Route::post('upload','ArticleController@upload')->name('article.upload');
 
     // 导航的资源路由
@@ -38,6 +38,7 @@ Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(fun
     //系统设置
     Route::get('system/basic','SystemController@basic')->name('system.basic');
     Route::get('system/sys','SystemController@sys')->name('system.sys');
+    Route::get('system/email','SystemController@email')->name('system.email');
     Route::post('system/store','SystemController@store')->name('system.store');
     Route::post('system/upload','SystemController@upload')->name('system.upload');
 

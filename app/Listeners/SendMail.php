@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\CommentCreated;
+use App\Http\Services\MailSetService;
 use App\Mail\Guest;
 use App\Mail\Owner;
 use App\Models\CommentReply;
@@ -32,7 +33,7 @@ class SendMail
      */
     public function handle(CommentCreated $event)
     {
-        //
+        MailSetService::setMail();
         $comment = $event->comment;
 
         try{
@@ -55,9 +56,9 @@ class SendMail
 
             }
             //所有的都通知owner
-            Mail::to('646054215@qq.com')->queue(new Owner($comment));
+            Mail::to(config('mail.from.name'))->queue(new Owner($comment));
         }catch (\Exception $e){
-            dd($e->getMessage());
+            return $e->getMessage();
         }
     }
 }
