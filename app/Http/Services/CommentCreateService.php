@@ -33,9 +33,8 @@ class CommentCreateService
         $remind = $request->post('remind', 0);
         $to_id = $request->post('to_id');
 
-        $default = "http://blog.crasphter.cn/public/images/default.jpg";
-        $hash = md5(strtolower(trim($email)));
-        $avatar = "https://cn.gravatar.com/avatar/" . $hash . "?s=64&d=" . urlencode( $default );
+
+        $avatar = $this->getAvatar($email);
         //先判断用户是否存在
         $user = User::where(['name' => $name,'email' => $email])->first();
         if(empty($user))
@@ -57,6 +56,12 @@ class CommentCreateService
             {
                 \Auth::guard('web')->logout();
             }
+            if($user->id != 1)
+            {
+                $user->avatar = $avatar;
+                $user->save();
+            }
+
             \Auth::guard('web')->attempt(['name' => $name,'password' => $email],1);
         }
         $status = 0;
@@ -95,17 +100,31 @@ class CommentCreateService
         if($comment)
         {
             $res = '';
+            if(!$comment_id)
+            {
+                $res .= '<ul class="children">';
+            }
             $res .= '<li class="comment even thread-even depth-1 parent comment-list" id="comment-'.$comment->id.'" data-no-instant="">';
             $res .= '<div id="div-comment-'.$comment->id.'" class="comment-body"><div class="comment-avatar-area">';
-            $res .= '<img alt="'.$name.'" src="'.$avatar.'"  onerror="onerror=null;src=\'http://blog.crasphter.cn/public/images/default.jpg\'"  class="no-error avatar avatar-50 photo"  width="50" height="50"></div><div class="comment-content-area"><div class="comment-content-user">';
+            if($avatar)
+            {
+                $res .= '<img alt="'.$name.'" src="'.$avatar.'"  onerror="onerror=null;src=\'http://blog.crasphter.cn/public/images/default.jpg\'"  class="no-error avatar avatar-50 photo"  width="50" height="50">';
+            }else{
+                $res .= '<img avatar="'.$name.'" alt="'.$name.'"  class="no-error avatar avatar-50 photo"  width="50" height="50">';
+            }
+            $res .='</div><div class="comment-content-area"><div class="comment-content-user">';
             $res .= '<span class="comment-auth"><a target="_blank" href="'.$user['url'].'" rel="external nofollow" class="url">'.$name.'</a></span>';
             if($user->id != 1){
-                $res .= '<span class="level level-"'.$user->level.'" title="等级 Lv."'.$user->level.'"，共有积分 "'.$user->fen.'" 分，还差 "'.$user->fen.'" 分升级至 Lv."'.$user->level.'">Lv '.$user->level.'</span>';
+                $res .= '<span class="level level-"'.get_level($user->fen)['level'].' title="等级 Lv.'.get_level($user->fen)['level'].'，共有积分 '.$user->fen.' 分，还差 '.get_level($user->fen)['diff'].' 分升级至 Lv.'.get_level($user->fen)['next'].'">Lv.'.get_level($user->fen)['level'].'</span>';
             }else{
                 $res .= '<span class="level level-admin" title="站长呦！">站长</span>';
             }
             $res .= '</div><div class="comment-content-text"><p>'.$content.'</p><p class="comment-awaiting-moderation"><i class="fa fa-lock"></i> 该评论正在审核中...</p></div>';
             $res .= '</div></div></li>';
+            if(!$comment_id)
+            {
+                $res .= '</ul>';
+            }
             return $res;
         }
     }
@@ -130,5 +149,15 @@ class CommentCreateService
         $pre = preg_replace ( '/\[pre\]([\s\S]*?)\[\/pre\]/imU' ,  '<pre>$1</pre>' ,  $content );
         $img = preg_replace ( '/\[img\](.*)\[\/img\]/imU' ,  '<a href="$1" class="comment-t-img-a"><i class="fa fa-picture-o"></i> 查看图片</a>' ,  $pre );
         return preg_replace ( '/\[url=(.*)\](.*)\[\/url\]/imU' ,  '<a href="$1" target="_blank" class="comment-t-a links" rel="nofollow noopener">$2</a> ' ,  $img );
+    }
+    protected function getAvatar($email)
+    {
+        $hash = md5(strtolower(trim($email)));
+        $headers=@get_headers('http://cn.gravatar.com/avatar/'.$hash.'?d=404');
+        if(strstr($headers[0],'404'))
+        {
+            return '';
+        }
+        return "https://cn.gravatar.com/avatar/" . $hash . "?s=64";
     }
 }

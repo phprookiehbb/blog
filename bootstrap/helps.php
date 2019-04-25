@@ -140,3 +140,12 @@ function get_master_img()
 {
     return \App\Models\User::where('id', 1)->first();
 }
+
+function admin_nav_active($name)
+{
+    $route = request()->route()->getAction('as');
+    if(strstr($route,$name.'.') !== false)
+    {
+        return true;
+    }
+}

@@ -17,8 +17,11 @@
             {{ csrf_field() }}
             @auth
                 <div class="comment-author-welcome">
-
-                    <img alt="crasph" src="{{ \Auth::user()->avatar }}" class="no-error avatar avatar-30 photo" width="30" height="30">
+                    @if(\Auth::user()->avatar)
+                    <img alt="{{ \Auth::user()->name }}" src="{{ \Auth::user()->avatar }}" class="no-error avatar avatar-30 photo" width="30" height="30">
+                    @else
+                        <img alt="{{ \Auth::user()->name }}" src="{{ \Auth::user()->avatar }}" class="no-error avatar avatar-30 photo" width="30" height="30" avatar="{{ \Auth::user()->name }}">
+                    @endif
                     欢迎 {{ \Auth::user()->name }} 再次光临！
                     <span title="点击编辑用户信息" onclick="jQuery('#comment-author-info').slideToggle()" class="links">编辑信息</span>
                     <a href="http://mkblog.cn/695/?from=cmt" target="_blank" class="links">修改头像</a>

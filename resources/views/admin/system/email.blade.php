@@ -32,6 +32,37 @@
                                     <fieldset>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">
+                                                是否开启邮件通知：
+                                            </label>
+                                            <div class="col-md-4">
+                                                <select class="form-control" name="mail_notice">
+                                                    <option value="1"
+                                                            @if(get_config('mail_notice') == 1)
+                                                            selected
+                                                            @endif
+                                                    >
+                                                        开启
+                                                    </option>
+                                                    <option value="0"
+                                                            @if(!get_config('mail_notice'))
+                                                            selected
+                                                            @endif
+                                                    >
+                                                        关闭
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 help-block">
+                                                <i class="fa fa-info-circle color-info1">
+                                                </i>
+                                                开启邮件通知，评论会抽到相应的邮件消息，配置名：
+                                                <code>
+                                                    mail_notice
+                                                </code>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
                                                 邮箱服务器类型：
                                             </label>
                                             <div class="col-md-4">

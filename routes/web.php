@@ -32,6 +32,9 @@ Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(fun
     Route::resource('weiyu', 'WeiyuController', ['only' => [
         'index', 'create', 'store', 'edit','update', 'destroy'
     ]]);
+    Route::resource('level', 'LevelController', ['only' => [
+        'index', 'create', 'store', 'edit','update', 'destroy'
+    ]]);
     Route::resource('admin', 'AdminController', ['only' => [
         'index', 'create', 'store', 'edit','update', 'destroy'
     ]]);

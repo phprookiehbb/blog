@@ -23,7 +23,9 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         CommentCreated::class => [
-            Comment::class,
+            Comment::class
+        ],
+        \App\Events\SendMail::class => [
             SendMail::class
         ]
     ];

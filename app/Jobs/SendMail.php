@@ -2,9 +2,6 @@
 
 namespace App\Jobs;
 
-use App\Events\CommentCreated;
-use App\Models\Comment;
-use App\Models\CommentReply;
 use Illuminate\Bus\Queueable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Queue\SerializesModels;
@@ -37,13 +34,6 @@ class SendMail implements ShouldQueue
     {
         //
         $comment = $this->comment;
-        if($comment instanceof Comment)
-        {
-            \event(new CommentCreated($comment));
-        }elseif($comment instanceof CommentReply){
-            \event(new CommentCreated($comment));
-        }
-
-
+        \event(new \App\Events\SendMail($comment));
     }
 }

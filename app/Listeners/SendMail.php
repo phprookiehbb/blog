@@ -2,13 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Events\CommentCreated;
 use App\Http\Services\MailSetService;
 use App\Mail\Guest;
 use App\Mail\Owner;
 use App\Models\CommentReply;
-use App\Models\Comment;
-use App\Models\User;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
@@ -26,12 +23,10 @@ class SendMail
     }
 
     /**
-     * Handle the event.
-     *
-     * @param  CommentCreated $event
-     * @return void
+     * @param \App\Events\SendMail $event
+     * @return string
      */
-    public function handle(CommentCreated $event)
+    public function handle(\App\Events\SendMail $event)
     {
         MailSetService::setMail();
         $comment = $event->comment;
