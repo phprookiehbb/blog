@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Services\CommentService;
 use App\Models\User;
 
-class ReadWallController
+class ReadWallController extends Controller
 {
     public function index()
     {

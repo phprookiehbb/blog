@@ -25,6 +25,8 @@ class LoginController extends Controller
         $remember = intval($request->input('remember',0));
         if(Auth::guard('admin')->attempt(compact('email','password'),$remember))
         {
+            $name = Auth::guard('admin')->user()->name;
+            Auth::guard('web')->attempt(['name' => $name,'password' => $email],$remember);
             return $this->success('登录成功',route('admin.index'));
         }
         return $this->success('登录失败',route('article.index'));
