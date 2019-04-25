@@ -76,7 +76,7 @@
             </a>
             <ul class="treeview-menu">
                 <li class=""><a href="{{ route('system.basic') }}"  class="pjax-a"><i class="fa fa-apple fa-fw"></i> 系统设置</a></li>
-                {{--<li class=""><a href="{{ route('admin.index') }}"  class="pjax-a"><i class="fa fa-apple fa-fw"></i> 用户管理</a></li>--}}
+                {{--<li class=""><a href="{{ route('admins.index') }}"  class="pjax-a"><i class="fa fa-apple fa-fw"></i> 用户管理</a></li>--}}
             </ul>
         </li>
         <li><a href="{{ route('comment.index') }}" class="pjax-a"><i class="fa fa-dashboard"></i> <span>评论管理</span></a></li>

@@ -260,7 +260,7 @@
                                         <ul class="nav nav-stacked">
                                             @foreach($articles as $article)
                                             <li>
-                                                <a href="{:url('@home/Article/detial',['id'=>$vo.id])}" target="_blank">
+                                                <a href="{{ route('article',['article' => $article->id]) }}" target="_blank">
                                                 <span class="text">
                                                     {{ $article->title }}
                                                 </span>
@@ -283,7 +283,7 @@
                                             @foreach($weiyus as $weiyu)
                                             <li class="item">
                                                 <div class="">
-                                                    <a class="product-title" href="{:url('@home/talk/index')}" target="_blank">
+                                                    <a class="product-title" href="javascript:void(0)" target="_blank">
                                                        {!! $weiyu->content !!}
                                                     </a>
                                                 </div>
@@ -294,106 +294,24 @@
                                 </div>
                             </div>
                             <div class="col-lg-4">
-                                <div class="box box-info">
+                                <div class="box box-success">
                                     <div class="box-header">
                                         <h3 class="box-title">
-                                            服务器信息
+                                            最新评论
                                         </h3>
                                     </div>
-                                    <div class="box-body">
-                                        <table class="table table-striped">
-                                            <tbody>
-                                            <tr>
-                                                <td width="140">
-                                                    FastAdmin版本
-                                                </td>
-                                                <td>
-                                                    1.0.0.20180911_beta
-                                                    <a class="btn btn-xs btn-checkversion" href="javascript:;">
-                                                        检查最新版
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    FastAdmin插件版本
-                                                </td>
-                                                <td>
-                                                    1.1.6
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    运行方式
-                                                </td>
-                                                <td>
-                                                    cgi-fcgi
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    调试模式
-                                                </td>
-                                                <td>
-                                                    是
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    环境信息
-                                                </td>
-                                                <td>
-                                                    Apache/2.4.23 (Win32) OpenSSL/1.0.2j mod_fcgid/2.3.9
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    上传模式
-                                                </td>
-                                                <td>
-                                                    local
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    上传URL
-                                                </td>
-                                                <td>
-                                                    ajax/upload
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    上传CDN
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    时区
-                                                </td>
-                                                <td>
-                                                    PRC
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    静态资源CDN
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    语言
-                                                </td>
-                                                <td>
-                                                    zh-cn
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+                                    <div class="box-body" id="discussion-list">
+                                        <ul class="products-list product-list-in-box">
+                                            @foreach($comments as $comment)
+                                                <li class="item">
+                                                    <div class="">
+                                                        <a class="product-title" href="{{ route('article',['article' => $comment->article_id]) }}#comment-{{ $comment->id }}" target="_blank">
+                                                            {!! $comment->content !!}
+                                                        </a>
+                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

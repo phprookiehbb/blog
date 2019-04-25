@@ -9,7 +9,7 @@
                             <div class="fixed-table-toolbar">
                                 <div class="bs-bars pull-left">
                                     <div id="builder-toolbar" class="toolbar">
-                                        <a title="添加" icon="fa fa-plus" class="btn btn-primary btn-sm" href="{{ route('admin.create') }}" primary-key="uid"><i class="fa fa-plus"></i> 添加</a>&nbsp;
+                                        <a title="添加" icon="fa fa-plus" class="btn btn-primary btn-sm" href="{{ route('admins.create') }}" primary-key="uid"><i class="fa fa-plus"></i> 添加</a>&nbsp;
                                     </div>
                                 </div>
                             </div>
@@ -34,8 +34,8 @@
                                         <td>{{ $admin->email }}</td>
                                         <td>{{ $admin->created_at }}</td>
                                         <td>
-                                            <a type="button" title="编辑"  href="{{ route('admin.edit',['admin' => $admin->id]) }}"  class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></a>
-                                            <form action="{{ route('admin.destroy',['admin' => $admin->id]) }}" method="post" style="display:inline-block">
+                                            <a type="button" title="编辑"  href="{{ route('admins.edit',['admin' => $admin->id]) }}"  class="btn btn-info btn-xs"><i class="fa fa-pencil"></i></a>
+                                            <form action="{{ route('admins.destroy',['admin' => $admin->id]) }}" method="post" style="display:inline-block">
                                                 {{ csrf_field() }}
                                                 {{ method_field('DELETE') }}
                                                 <button type="submit"  class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></button>

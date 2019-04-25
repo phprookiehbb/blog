@@ -17,8 +17,8 @@ Route::get('route','\App\Http\Controllers\Admin\NavController@route');
 Route::get('login','\App\Http\Controllers\Admin\LoginController@index')->name('login.index');
 Route::get('logout','\App\Http\Controllers\Admin\LoginController@logout')->name('login.logout');
 Route::post('login','\App\Http\Controllers\Admin\LoginController@login')->name('login.login');
-Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(function (){
-
+Route::namespace('Admin')->middleware('admin.login')->prefix('crasp')->group(function (){
+    Route::get('/','IndexController@index')->name('admin.index');
     Route::get('/index','IndexController@index')->name('admin.index');
     Route::post('upload','ArticleController@upload')->name('article.upload');
 
@@ -35,7 +35,7 @@ Route::namespace('Admin')->middleware('admin.login')->prefix('admin')->group(fun
     Route::resource('level', 'LevelController', ['only' => [
         'index', 'create', 'store', 'edit','update', 'destroy'
     ]]);
-    Route::resource('admin', 'AdminController', ['only' => [
+    Route::resource('admins', 'AdminController', ['only' => [
         'index', 'create', 'store', 'edit','update', 'destroy'
     ]]);
     //系统设置

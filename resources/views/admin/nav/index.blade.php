@@ -10,7 +10,6 @@
                             <div class="bs-bars pull-left">
                                 <div id="builder-toolbar" class="toolbar">
                                     <a title="添加" icon="fa fa-plus" class="btn btn-primary btn-sm" href="{{ route('nav.create') }}" primary-key="uid"><i class="fa fa-plus"></i> 添加</a>&nbsp;
-                                    <a title="排序" icon="fa fa-plus" class="btn btn-success btn-sm ajaxsort"  primary-key="uid"><i class="fa fa-plus"></i> 排序</a>&nbsp;
                                 </div>
                             </div>
                         </div>

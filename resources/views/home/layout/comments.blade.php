@@ -113,7 +113,7 @@
                         @if($comment->user->avatar)
                         <img alt="{{ $comment->user->name }}" class="no-error avatar avatar-50 photo" height="50" onerror="onerror=null;src='http://blog.crasphter.cn/public/images/default.jpg'"  src="{{ $comment->user->avatar }}" width="50"/>
                         @else
-                            <img alt="{{ $comment->user->name }}" class="no-error avatar avatar-50 photo" height="50" avatar="{{ $comment->user->name }}" width="50"/>
+                            <img src="{{ $comment->user->avatar }}" alt="{{ $comment->user->name }}" class="no-error avatar avatar-50 photo" height="50" avatar="{{ $comment->user->name }}" width="50"/>
                         @endif
                     </div>
                     <div class="comment-content-area">
@@ -185,12 +185,16 @@
             <li class="comment byuser comment-author-mengkun bypostauthor odd alt depth-2" data-no-instant="" id="comment-{{ $reply->id }}">
                 <div class="comment-body" id="div-comment-{{ $reply->id }}">
                     <div class="comment-avatar-area">
-                        <img alt=" {{ $reply->user->username }}" class="no-error avatar avatar-50 photo" height="50" onerror="onerror=null;src='http://blog.crasphter.cn/public/images/default.jpg'"  src="{{ $reply->user->avatar }}" width="50"/>
+                        @if($reply->user->avatar)
+                        <img alt=" {{ $reply->user->name }}" class="no-error avatar avatar-50 photo" height="50" onerror="onerror=null;src='http://blog.crasphter.cn/public/images/default.jpg'"  src="{{ $reply->user->avatar }}" width="50"/>
+                        @else
+                            <img alt=" {{ $reply->user->name }}" avatar=" {{ $reply->user->name }}" class="no-error avatar avatar-50 photo" height="50"  width="50"/>
+                        @endif
                     </div>
                     <div class="comment-content-area">
                         <div class="comment-content-user">
                                         <span class="comment-auth">
-                                            {{ $reply->user->username }}
+                                            {{ $reply->user->name }}
                                         </span>
                             <!-- 评论等级 -->
 
@@ -222,7 +226,7 @@
                                  {{ $reply->created_at }}
                             </span>
                             <span>
-                                <a aria-label="回复给{{ $reply->user->username }}" class="comment-reply-link" href="#respond" onclick='return addComment.moveForm( "div-comment-{{ $reply->id }}", "{{ $comment->id }}", "respond", "{{ $reply->user->id }}","{{ $reply->id }}")' rel="nofollow">
+                                <a aria-label="回复给{{ $reply->user->name }}" class="comment-reply-link" href="#respond" onclick='return addComment.moveForm( "div-comment-{{ $reply->id }}", "{{ $comment->id }}", "respond", "{{ $reply->user->id }}","{{ $reply->id }}")' rel="nofollow">
                                     回复
                                 </a>
                             </span>

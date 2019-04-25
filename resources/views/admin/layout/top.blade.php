@@ -222,7 +222,7 @@
                     <!-- Menu Footer-->
                     <li class="user-footer">
                         <div class="pull-left">
-                            <a href="{{ route('admin.edit',['admin' => \Auth::guard('admin')->id()]) }}" class="btn btn-default btn-flat">个人主页</a>
+                            <a href="{{ route('admins.edit',['admin' => \Auth::guard('admin')->id()]) }}" class="btn btn-default btn-flat">个人主页</a>
                         </div>
                         <div class="pull-right">
                             <a href="{{ route('login.logout') }}" class="btn btn-default btn-flat">退出登录</a>

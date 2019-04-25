@@ -4,7 +4,7 @@
 
     <header class="main-header">
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ route('admin.index') }}" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>B</b>LOG</span>
             <!-- logo for regular state and mobile devices -->
@@ -29,7 +29,7 @@
                <small>Control panel</small>
              </h1> -->
             <ol class="breadcrumb" style="left:15px;">
-                <li><a href="{{ route('home.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
+                <li><a href="{{ route('admin.index') }}"><i class="fa fa-dashboard"></i> 首页</a></li>
             </ol>
         </section>
 

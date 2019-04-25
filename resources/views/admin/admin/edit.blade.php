@@ -78,7 +78,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="settings">
-                            <form class="form-horizontal ajaxForm" action="{{ route('admin.update',['admin' => $admin->id]) }}" method="post">
+                            <form class="form-horizontal ajaxForm" action="{{ route('admins.update',['admin' => $admin->id]) }}" method="post">
                                 {{ csrf_field() }}
                                 {{ method_field('PUT') }}
                             <div class="box-body">

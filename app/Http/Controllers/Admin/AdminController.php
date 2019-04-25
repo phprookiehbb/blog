@@ -31,7 +31,7 @@ class AdminController extends Controller
         $admin->avatar = $request->post('avatar') ?? '';
         $admin->info = $request->post('info') ?? '';
         $admin->save();
-        return $this->success('添加成功',route('admin.index'));
+        return $this->success('添加成功',route('admins.index'));
     }
     public function edit(Admin $admin)
     {
@@ -47,13 +47,13 @@ class AdminController extends Controller
         $admin->avatar = $request->post('avatar') ?? '';
         $admin->info = $request->post('info') ?? '';
         $admin->save();
-        return $this->success('修改成功',route('admin.index'));
+        return $this->success('修改成功',route('admins.index'));
     }
     public function destory(Admin $admin)
     {
         if($admin->id == 1)
         {
-            return $this->error('超级管理员不能删除',route('admin.index'));
+            return $this->error('超级管理员不能删除',route('admins.index'));
         }
         $admin->delete();
         return redirect()->back();

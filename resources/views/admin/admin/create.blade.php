@@ -9,7 +9,7 @@
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="settings">
-                            <form class="form-horizontal ajaxForm" action="{{ route('admin.store') }}" method="post">
+                            <form class="form-horizontal ajaxForm" action="{{ route('admins.store') }}" method="post">
                                 {{ csrf_field() }}
                             <div class="box-body">
                                 <div class="form-group">
