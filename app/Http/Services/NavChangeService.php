@@ -27,7 +27,7 @@ class NavChangeService
             }elseif($nav->template == '_template_single'){
                 $route.= "Route::get('".$nav->url."','\App\Http\Controllers\Home\SingleController@index')->name('nav.".$nav->url."');\r\n";
             }elseif($nav->template == '_template_readwall'){
-                $route.= "Route::get('".$nav->url."','\App\Http\Controllers\Home\ReadwallController@index')->name('nav.".$nav->url."');\r\n";
+                $route.= "Route::get('".$nav->url."','\App\Http\Controllers\Home\ReadWallController@index')->name('nav.".$nav->url."');\r\n";
             }
         }
         file_put_contents(str_replace('\\','/',base_path('routes')).'/home.php',$route);
