@@ -42,8 +42,12 @@
                                 @endswitch
                                 <small>【{{ $user->comments }}】条评论</small>
                             </h4>
+                            @if($user->avatar)
                             <img alt="{{ $user->name }}" class="no-error avatar avatar-50 photo" height="50" onerror="onerror=null;src='/home/picture/a7852ba1aac74d32917caaebda5dda2e.gif'"  src="{{ $user->avatar }}" width="50"/>
-                            <div class="readwall-top-username">
+                            @else
+                                <img alt="{{ $user->name }}" avatar="{{ $user->name }}" class="no-error avatar avatar-50 photo" height="50"  width="50"/>
+                            @endif
+                                <div class="readwall-top-username">
                                 <span>{{ $user->name }}</span>
                                 <span>LV{{ (get_level($user->fen))['level'] }}，{{ $user->fen }}积分</span>
                             </div>
