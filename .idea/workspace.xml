@@ -61,7 +61,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="130" />
+          <entry key="css" value="149" />
           <entry key="dummy" value="39" />
           <entry key="env" value="70" />
           <entry key="example" value="15" />
@@ -69,13 +69,13 @@
           <entry key="html" value="1" />
           <entry key="js" value="691" />
           <entry key="json" value="99" />
-          <entry key="php" value="50240" />
+          <entry key="php" value="50280" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="11569" />
-          <entry key="CSS" value="130" />
+          <entry key="Blade" value="11609" />
+          <entry key="CSS" value="149" />
           <entry key="HTML" value="5" />
           <entry key="JSON" value="99" />
           <entry key="JavaScript" value="691" />
@@ -156,20 +156,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/home/template/_template_readwall.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="49" column="65" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="65" />
+            <state relative-caret-position="550">
+              <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/home/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="175">
-              <caret line="7" column="9527" selection-start-line="7" selection-start-column="9527" selection-end-line="7" selection-end-column="9527" />
+              <caret line="7" column="9548" selection-start-line="7" selection-start-column="9548" selection-end-line="7" selection-end-column="9548" />
             </state>
           </provider>
         </entry>
@@ -190,7 +190,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editormd_id-html-code</find>
       <find>17uw</find>
       <find>emoji</find>
       <find>get_config</find>
@@ -220,6 +219,7 @@
       <find>\Auth</find>
       <find>回复</find>
       <find>class=&quot;comment-reply-link&quot;</find>
+      <find>.readwall-bot a span</find>
     </findStrings>
     <replaceStrings>
       <replace>from_</replace>
@@ -289,8 +289,8 @@
         <option value="$PROJECT_DIR$/routes/home.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Home/ReadwallController.php" />
         <option value="$PROJECT_DIR$/app/Http/Services/NavChangeService.php" />
-        <option value="$PROJECT_DIR$/resources/views/home/template/_template_readwall.blade.php" />
         <option value="$PROJECT_DIR$/public/home/css/style.css" />
+        <option value="$PROJECT_DIR$/resources/views/home/template/_template_readwall.blade.php" />
       </list>
     </option>
   </component>
@@ -616,12 +616,12 @@
       <workItem from="1556077561876" duration="12004000" />
       <workItem from="1556153777214" duration="16093000" />
       <workItem from="1556174300987" duration="616000" />
-      <workItem from="1556178117133" duration="2977000" />
+      <workItem from="1556178117133" duration="3153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304638000" />
+    <option name="totallyTimeSpent" value="304814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,17 +972,17 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home/template/_template_readwall.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="49" column="65" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/home/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
-          <caret line="7" column="9527" selection-start-line="7" selection-start-column="9527" selection-end-line="7" selection-end-column="9527" />
+          <caret line="7" column="9548" selection-start-line="7" selection-start-column="9548" selection-end-line="7" selection-end-column="9548" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home/template/_template_readwall.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="67" column="44" lean-forward="true" selection-start-line="67" selection-start-column="44" selection-end-line="67" selection-end-column="44" />
         </state>
       </provider>
     </entry>

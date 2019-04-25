@@ -65,7 +65,11 @@
                                 @else
                                     <a href="javascript:void(0)">
                                         @endif
+                          @if($user->avatar)
                         <img alt="{{ $user->name }}" class="no-error avatar avatar-50 photo" height="50" onerror="onerror=null;src='/home/picture/a7852ba1aac74d32917caaebda5dda2e.gif'"  src="{{ $user->avatar }}" width="50"/>
+                        @else
+                         <img alt="{{ $user->name }}" avatar="{{ $user->name }}" class="no-error avatar avatar-50 photo" height="50"  width="50"/>
+                       @endif
                         <span>{{ $user->name }}</span>
                     </a>
                     @endif
