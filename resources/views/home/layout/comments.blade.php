@@ -1,6 +1,9 @@
-@if(get_config('web_comment') == 1)
+
 <!-- #post -->
 <div class="comments-area" id="comments">
+    @if(get_config('web_comment') != 1)
+    <div class="mk-alert warning fa fa-ban">&nbsp;博主关闭了这篇内容的评论功能</div>
+    @else
     <div class="comment-respond" id="respond">
         <div class="comment-reply-title">
             <span>
@@ -103,6 +106,7 @@
         </form>
     </div>
     <!-- respond -->
+    @endif
     <!-- 评论列表 -->
     <ol class="comment-list">
         <!-- #comment-## -->
@@ -165,10 +169,10 @@
                         <span>
                                     {{ $comment->created_at }}
                                 </span>
-                        @if($comment->status == 1)
+                        @if($comment->status == 1 && get_config('web_comment') == 1)
                             <span>
                                 <a aria-label="回复给{{ $comment->user->username }}" class="comment-reply-link" href="#respond" onclick='return addComment.moveForm( "div-comment-{{ $comment->id }}","{{ $comment->id }}", "respond", "{{ $comment->user->id }}" , "0")' rel="nofollow">
-                                    回复
+                                    回复{{ get_config('web_comment') }}
                                 </a>
                             </span>
                         @endif
@@ -225,11 +229,13 @@
                             <span>
                                  {{ $reply->created_at }}
                             </span>
+                            @if(get_config('web_comment') == 1)
                             <span>
                                 <a aria-label="回复给{{ $reply->user->name }}" class="comment-reply-link" href="#respond" onclick='return addComment.moveForm( "div-comment-{{ $reply->id }}", "{{ $comment->id }}", "respond", "{{ $reply->user->id }}","{{ $reply->id }}")' rel="nofollow">
                                     回复
                                 </a>
                             </span>
+                                @endif
                         </div>
                     @endif
                     <!-- comment-content-info -->
@@ -254,4 +260,3 @@
 </nav>
 
 </div>
-@endif
