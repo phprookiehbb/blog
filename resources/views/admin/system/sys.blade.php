@@ -32,6 +32,22 @@
                                     <fieldset>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">
+                                                后台入口：
+                                            </label>
+                                            <div class="col-md-4">
+                                                <input class="form-control" name="web_admin" type="text" value="{{ get_config('web_admin') }}" placeholder="网站的后台入口名称" />
+                                            </div>
+                                            <div class="col-md-5 help-block">
+                                                <i class="fa fa-info-circle color-info1">
+                                                </i>
+                                                设置显示的网站的标题，配置名：
+                                                <code>
+                                                    web_admin
+                                                </code>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
                                                 是否开启评论：
                                             </label>
                                             <div class="col-md-4">
