@@ -38,7 +38,5 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-//        //配置信息到前后台
-//        view()->share('sys_config',Config::pluck('value','name')->toArray());
     }
 }

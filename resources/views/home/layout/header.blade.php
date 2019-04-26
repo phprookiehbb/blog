@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="top-navi-content">
-        <a class="top-navi-logo" href="{:url('@home/index/index')}">
+        <a class="top-navi-logo" href="{{ route('home.index') }}">
             <img alt="{{ get_config('web_name') }}" src="{{ get_config('web_logo') }}">
 
         </a>
