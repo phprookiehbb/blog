@@ -14,10 +14,13 @@
 Route::get('/', '\App\Http\Controllers\Home\IndexController@index')->name('home.index');
 Route::get('route','\App\Http\Controllers\Admin\NavController@route');
 
+//设置后端入口
+$prefix = get_config('web_admin') ? get_config('web_admin') : 'admin';
+
 Route::get('login','\App\Http\Controllers\Admin\LoginController@index')->name('login.index');
 Route::get('logout','\App\Http\Controllers\Admin\LoginController@logout')->name('login.logout');
 Route::post('login','\App\Http\Controllers\Admin\LoginController@login')->name('login.login');
-Route::namespace('Admin')->middleware('admin.login')->prefix('crasp')->group(function (){
+Route::namespace('Admin')->middleware('admin.login')->prefix($prefix)->group(function (){
     Route::get('/','IndexController@index')->name('admin.index');
     Route::get('/index','IndexController@index')->name('admin.index');
     Route::post('upload','ArticleController@upload')->name('article.upload');
@@ -52,10 +55,9 @@ Route::namespace('Admin')->middleware('admin.login')->prefix('crasp')->group(fun
     Route::post('comment/delete/{comment}','CommentController@delete')->name('comment.delete');
     Route::post('comment/deleteReply/{comment}','CommentController@reply')->name('comment.reply');
     Route::post('comment/check','CommentController@check')->name('comment.check');
-
 });
-Route::get('/article/{article}','\App\Http\Controllers\Home\ArticleController@index')->name('article');
-Route::post('/comment','\App\Http\Controllers\Home\CommentController@comment')->name('comment');
+Route::get('/article/{article}','\App\Http\Controllers\Home\ArticleController@index')->middleware('defence')->name('article');
+Route::post('/comment','\App\Http\Controllers\Home\CommentController@comment')->middleware('defence')->name('comment');
 Route::post('/article/zan','\App\Http\Controllers\Home\CommentController@zan')->name('article.zan');
 
 Route::get('/tags','\App\Http\Controllers\Home\TagController@tags')->name('tags');

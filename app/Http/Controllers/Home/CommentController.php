@@ -22,7 +22,7 @@ class CommentController extends Controller
      */
     public function comment(Request $request)
     {
-
+        
         $comment = (new CommentCreateService())->comment($request);
         return $comment;
     }
