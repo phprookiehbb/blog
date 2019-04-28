@@ -41,6 +41,8 @@ php artisan key:generate
 php artisan migrate  
 //生成初始化的数据
 php artisan db:seed  
+
+php artisan storage:link
 //清空缓存
 php artisan cache:clear
 ```
