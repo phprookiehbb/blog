@@ -16,13 +16,13 @@ class ConfigSeeder extends Seeder
         DB::table('configs')->insert([
             [
                 'name' => 'web_name',
-                'value' => 'CraspHB彬的博客 | 一个php爱好者',
+                'value' => 'test的博客 | 一个php爱好者',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
             [
                 'name' => 'web_keywords',
-                'value' => 'CraspHB彬的博客,CraspHB彬,CraspHB,PHP,phprookie,博客',
+                'value' => 'test的博客,test,PHP,博客',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
@@ -34,19 +34,19 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'name' => 'web_copyright',
-                'value' => 'Copyright 2017-2018 © crasphter.cn',
+                'value' => 'Copyright 2017-2018 © baidu.com',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
             [
                 'name' => 'web_record',
-                'value' => 'crasphb彬 保留所有权利 - 豫ICP备17032233号-1',
+                'value' => 'test的博客 保留所有权利 - XICP备170****3号-1',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
             [
                 'name' => 'web_github',
-                'value' => 'https://github.com/phprookiehbb/',
+                'value' => 'https://github.com/',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
@@ -58,7 +58,7 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'name' => 'web_author',
-                'value' => 'Crasph彬',
+                'value' => 'test',
                 'created_at' => $time,
                 'updated_at' => $time
             ],
@@ -70,7 +70,7 @@ class ConfigSeeder extends Seeder
             ],
             [
                 'name' => 'web_article_copyright',
-                'value' => '注：本文为 Crasph彬 原创文章，转载无需和我联系，但请注明来自 <a href="{url}">{url}</a>Crasph彬的博客。',
+                'value' => '注：本文为 test博客 原创文章，转载无需和我联系，但请注明来自 <a href="{url}">{url}</a>test博客。',
                 'created_at' => $time,
                 'updated_at' => $time
             ],

@@ -75,7 +75,7 @@
                             <div class="form-group">
                                 <label for="exampleInputEmail1">自定义模板</label>
                                 <select name="template" class="form-control col-sm-8" required >
-                                    <option value="0">--请选择--</option>
+                                    <option value="">--请选择--</option>
                                     @foreach($templates as $template)
                                         <option value="{{ $template }}"
                                                 @if($nav->template == $template)

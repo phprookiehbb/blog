@@ -4,6 +4,7 @@
         <div class="row">
             <form class="form-horizontal ajaxForm" action="{{ route('level.update',['level' => $level->id]) }}" method="post"  >
                 {{ csrf_field() }}
+                {{ method_field('PUT') }}
                 <div class="col-md-12">
                     <!-- About Me Box -->
                     <div class="box box-primary">

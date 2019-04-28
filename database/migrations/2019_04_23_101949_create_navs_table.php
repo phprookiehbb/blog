@@ -24,9 +24,7 @@ class CreateNavsTable extends Migration
             $table->unsignedTinyInteger('sort')->default(0);
             $table->string('template');
             $table->unsignedTinyInteger('is_comment')->default(1);
-            $table->unsignedInteger('_lft')->default(0);
-            $table->unsignedInteger('_rgt')->default(0);
-            $table->unsignedInteger('parent_id')->nullable(true)->default(0);
+            Kalnoy\Nestedset\NestedSet::columns($table);
             $table->timestamps();
         });
     }

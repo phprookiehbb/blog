@@ -14,13 +14,11 @@
 Route::get('/', '\App\Http\Controllers\Home\IndexController@index')->name('home.index');
 Route::get('route','\App\Http\Controllers\Admin\NavController@route');
 
-//设置后端入口
-$prefix = get_config('web_admin') ? get_config('web_admin') : 'admin';
 
 Route::get('login','\App\Http\Controllers\Admin\LoginController@index')->name('login.index');
 Route::get('logout','\App\Http\Controllers\Admin\LoginController@logout')->name('login.logout');
 Route::post('login','\App\Http\Controllers\Admin\LoginController@login')->name('login.login');
-Route::namespace('Admin')->middleware('admin.login')->prefix($prefix)->group(function (){
+Route::namespace('Admin')->middleware('admin.login')->prefix('blog')->group(function (){
     Route::get('/','IndexController@index')->name('admin.index');
     Route::get('/index','IndexController@index')->name('admin.index');
     Route::post('upload','ArticleController@upload')->name('article.upload');

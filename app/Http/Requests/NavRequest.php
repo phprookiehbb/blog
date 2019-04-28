@@ -14,6 +14,8 @@ class NavRequest extends Request
     {
         return [
             'name' => ['required','min:1','max:15'],
+            'markdown' => ['required'],
+            'template' => ['required'],
             'url'  => [
                 'required',
                 'unique:navs,url,'.$this->route()->originalParameter('nav')
@@ -26,6 +28,8 @@ class NavRequest extends Request
             'name.required' => '导航名称不能为空',
             'name.min' => '导航名称不能少于1个字符',
             'name.max' => '导航名称最多15个字符',
+            'markdown.required' => '内容不能为空',
+            'template.required' => '所属模板不能为空',
             'url.required' => '导航链接不能为空',
             'url.unique' => '导航链接已存在',
         ];

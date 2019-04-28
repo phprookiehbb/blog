@@ -1,12 +1,4 @@
 <?php
-Route::get('talk','\App\Http\Controllers\Home\WeiyuController@index')->name('nav.talk');
-Route::get('link','\App\Http\Controllers\Home\SingleController@index')->name('nav.link');
-Route::get('about','\App\Http\Controllers\Home\SingleController@index')->name('nav.about');
-Route::get('aboutme','\App\Http\Controllers\Home\SingleController@index')->name('nav.aboutme');
-Route::get('readwall','\App\Http\Controllers\Home\ReadwallController@index')->name('nav.readwall');
 Route::get('archive','\App\Http\Controllers\Home\ArchiveController@index')->name('nav.archive');
 Route::get('category/php','\App\Http\Controllers\Home\CategoryController@index')->name('nav.php');
-Route::get('category/linux','\App\Http\Controllers\Home\CategoryController@index')->name('nav.linux');
-Route::get('category/javascript','\App\Http\Controllers\Home\CategoryController@index')->name('nav.javascript');
-Route::get('category/html5','\App\Http\Controllers\Home\CategoryController@index')->name('nav.html5');
-Route::get('category/goosip','\App\Http\Controllers\Home\CategoryController@index')->name('nav.goosip');
+Route::get('link','\App\Http\Controllers\Home\SingleController@index')->name('nav.link');
