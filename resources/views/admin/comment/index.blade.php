@@ -43,7 +43,7 @@
                                     <td>{{ $comment->user->email }}</td>
                                     <td>{{ $comment->nav->name }}</td>
                                     <td>
-                                        {!! $comment->content !!}
+                                        {!! $comment->real_content !!}
                                     </td>
                                     <td>
                                         @switch($comment->status)

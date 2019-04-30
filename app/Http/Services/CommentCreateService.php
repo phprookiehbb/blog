@@ -119,7 +119,7 @@ class CommentCreateService
             }else{
                 $res .= '<span class="level level-admin" title="站长呦！">站长</span>';
             }
-            $res .= '</div><div class="comment-content-text"><p>'.$content.'</p><p class="comment-awaiting-moderation"><i class="fa fa-lock"></i> 该评论正在审核中...</p></div>';
+            $res .= '</div><div class="comment-content-text"><p>'.$comment->content.'</p><p class="comment-awaiting-moderation"><i class="fa fa-lock"></i> 该评论正在审核中...</p></div>';
             $res .= '</div></div></li>';
             if(!$comment_id)
             {

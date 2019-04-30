@@ -41,4 +41,14 @@ class Comment extends Models
     {
         return $query->where('type', $type);
     }
+    public function getContentAttribute($value)
+    {
+        $search = explode(',', get_config('web_filter'));
+        $content = str_replace($search,'***',$value);
+        return $content;
+    }
+    public function getRealContentAttribute()
+    {
+        return $this->attributes['content'];
+    }
 }

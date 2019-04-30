@@ -38,4 +38,14 @@ class CommentReply extends Models
     {
         return $this->belongsTo(CommentReply::class,'to_id','id');
     }
+    public function getContentAttribute($value)
+    {
+        $search = explode(',', get_config('web_filter'));
+        $content = str_replace($search,'***',$value);
+        return $content;
+    }
+    public function getRealContentAttribute()
+    {
+        return $this->attributes['content'];
+    }
 }

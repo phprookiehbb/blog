@@ -32,6 +32,22 @@
                                     <fieldset>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">
+                                                敏感词过滤：
+                                            </label>
+                                            <div class="col-md-6">
+                                                <textarea class="form-control" length="120" name="web_filter" rows="5">{{ get_config('web_filter') }}</textarea>
+                                                <p class="help-block">
+                                                    <i class="fa fa-info-circle color-info1">
+                                                    </i>
+                                                    支持敏感词汇的评论过滤，多个用,隔开，配置名：
+                                                    <code>
+                                                        web_filter
+                                                    </code>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">
                                                 是否开启评论：
                                             </label>
                                             <div class="col-md-4">
